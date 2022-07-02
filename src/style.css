@@ -1,0 +1,231 @@
+*{box-sizing: border-box;}
+*:before,*:after{box-sizing: border-box;}
+*{margin:0;padding: 0;}
+ul,ol{list-style: none;}
+a{color: inherit;text-decoration: none;}
+.icon{
+    width: 1em;height: 1em;
+    vertical-align: -0.15em;
+    fill:currentColor;
+    overflow: hidden;
+}
+img{max-width: 100%;max-width:100% ;}
+
+/*style*/
+.webBackground{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    background-color: #fff;
+    background: url(web-background2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+}
+
+body{background: #eee;}
+.webTitle{
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+@media(min-width:500px){
+    .webTitle{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+    }
+   
+}
+
+.webTitle .titleText{
+    font-family: 'Titan One', cursive;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto; 
+    background-image: linear-gradient(#2de2ff,#8b67fb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    word-break:keep-all!important ;
+}
+@media(min-width:500px){
+    .webTitle .titleText{
+        font-size: 50px;
+    }
+}
+.webTitle .showTime{
+    display: flex;   
+    justify-content:right;
+    font-family: 'Tajawal', sans-serif;
+}
+.globalHeader{
+    margin: 20px;  
+}
+@media(min-width:500px){
+    .globalHeader{
+        margin: 60px 0;
+    }
+}
+.searchForm{
+    display:flex;
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+@media(min-width:500px){
+    .searchForm{
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.searchForm > input{
+    width:100%;
+    margin-right: 10px;/*让空格与搜索按钮之间有空隙*/
+    height: 40px;
+    padding:0 10px;/*使得输入起点有空格,美观*/
+    border:1px solid#ddd;
+    border-radius: 4px;/*圆角*/
+}
+.searchForm > button{
+    white-space: nowrap;/*避免按钮文字受挤压*/
+    padding:0 28px;/*让输入文字与边框有空隙,美观*/
+    border-radius: 4px;/*圆角*/
+    border:1px solid#ddd;/*避免有黑边框重叠*/
+    background: #2CA0D1;
+    color:white;
+    font-size :16px;
+}
+
+.globalMain{
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;/*用于居中,如果最大宽度不定,可以用automagin来进行居中*/
+}
+
+.siteList{
+    margin:20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media(min-width:500px){
+    .siteList{
+        margin-left: 0;
+        margin-right: -25px;
+        justify-content: flex-start;
+    }
+}
+
+.siteList > li{
+    margin-bottom: 15px;
+}/*>就是找第一层级的li*/
+
+@media(min-width:500px){
+    .siteList > li{
+        margin-right: 25px; 
+    }
+}
+
+.siteList .site{
+    border:1px solid #ddd;
+    width: 160px;
+    padding: 20px 0;
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+    flex-direction: column;
+    background: white;
+    border-radius: 4px;
+    border:1px solid #ddd;
+    position: relative;
+    cursor:pointer;/*浮出手型光标*/
+    transition: all;
+}/*空格相当于siteList全局搜索*/
+.siteList .site:hover{
+    transform: scale(1.05,1.05);
+}
+
+.siteList .site >.logo{
+    font-size: 64px;
+    height:64px;
+    width:64px;
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+    text-transform: uppercase;/*全大写*/
+}  
+.siteList .site > .link{
+    font-size: 12px;
+    width:64px;
+    display: flex;
+    justify-content:center;
+    margin-top: 10px;
+}
+.siteList .site > .close{
+    position:absolute;
+    top:0;
+    right: 0;
+    display: none;
+    cursor: default;/*关闭手型光标*/
+}
+
+@media(max-width:400px){
+    .siteList .site > .close{
+        display: block;
+    }
+}
+
+.siteList .site:hover > .close{
+    display: block;/*光标浮于site上面才显示出X*/
+}
+
+
+.siteList .site .iconpark-icon{
+    height:30px;
+    width: 30px;
+}
+.siteList .addButton{
+    border:1px solid #ddd;
+    width: 160px;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+    flex-direction: column;
+    padding: 21px 0;
+    transition: all;
+}
+.siteList .addButton:hover{
+    transform: scale(1.05,1.05);
+}
+.siteList .addButton .icon1{
+    height:64px;
+    width:64px;
+}
+.siteList .addButton .icon-Wrapper{
+    
+    height:64px;
+    width:64px;
+    justify-content:center;
+    align-items: center; 
+}
+.siteList .addButton .text{
+    margin-top: 10px;
+    font-size:12px; 
+}
